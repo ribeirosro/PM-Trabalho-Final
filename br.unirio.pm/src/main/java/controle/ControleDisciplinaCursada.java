@@ -41,4 +41,13 @@ public class ControleDisciplinaCursada {
 		aux.setQtdTentativas(aux.getQtdTentativas() + 1);
 		aux.setSituacao(situacao);
 	}
+	
+	//Retorna true se, em alguma disciplina, o aluno reprovou 4 vezes ou mais
+	public boolean qtdTentativasExcessiva() {
+		for (DisciplinaCursada aux : listaDisciplinaCursada) {
+			if (aux.getQtdTentativas() >= 4 && aux.getSituacao().equals("reprovado")) return true;
+		}
+		
+		return false;
+	}
 }

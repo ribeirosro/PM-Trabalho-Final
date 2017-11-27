@@ -5,13 +5,15 @@ public class Aluno {
 	private double cr;
 	private int periodo;
 	private boolean planoIntegralizacao; //Se true, o aluno deve apresentar o plano de integralização
+	private boolean isQtdDisciplinas; //Se true, o aluno está cursando mais de 03 matérias no periodo atual
 	
-	public Aluno(String matricula, String nome, double cr, int periodo, boolean planoIntegralizacao) {
+	public Aluno(String matricula, String nome, double cr, int periodo, boolean planoIntegralizacao, boolean isQtdDisciplinas) {
 		this.matricula = matricula;
 		this.nome = nome;
 		this.cr = cr;
 		this.periodo = periodo;
 		this.planoIntegralizacao = planoIntegralizacao;
+		this.isQtdDisciplinas = isQtdDisciplinas;
 	}
 
 	public String getMatricula() {
@@ -53,5 +55,15 @@ public class Aluno {
 	public void setPlanoIntegralizacao(boolean planoIntegralizacao) {
 		this.planoIntegralizacao = planoIntegralizacao;
 	}
+
+	public boolean isQtdDisciplinas() {
+		return isQtdDisciplinas;
+	}
+
+	public void setQtdDisciplinas(boolean isQtdDisciplinas) {
+		this.isQtdDisciplinas = isQtdDisciplinas;
+	}
+	
+	
 		
 }

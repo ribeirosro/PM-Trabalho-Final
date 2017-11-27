@@ -54,6 +54,11 @@ public class Projeto extends JFrame {
 		lblSelecioneOArquivo.setBounds(34, 52, 149, 14);
 		contentPane.add(lblSelecioneOArquivo);
 		
+		JLabel lblUsuario = new JLabel("Usuario");
+		lblUsuario.setBounds(232, 27, 46, 14);
+		lblUsuario.setVisible(false);
+		contentPane.add(lblUsuario);
+		
 		JButton btnSelecionarArquivo = new JButton("Selecionar arquivo");
 		btnSelecionarArquivo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -66,11 +71,14 @@ public class Projeto extends JFrame {
 				if (retorno == JFileChooser.APPROVE_OPTION) {
 					new ControleProjeto(fileChooser.getSelectedFile().getPath());
 					
+					//lblUsuario.setText("oi");
+					
 				}
 				
 			}
 		});
-		btnSelecionarArquivo.setBounds(34, 91, 121, 23);
+		btnSelecionarArquivo.setBounds(34, 78, 121, 35);
 		contentPane.add(btnSelecionarArquivo);
+		
 	}
 }

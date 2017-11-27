@@ -26,6 +26,7 @@ public class ControlePdf {
 		String matricula = null, nome = null;
 		Double cra = 0.0;
 		int periodo = 0;
+		int qtdMateriasCursando = 0;
 		
 		for (String linha : listaTextoPdf) {
 			
@@ -49,9 +50,12 @@ public class ControlePdf {
 			if (linha.contains("Período Atual:"))
 				periodo = Integer.parseInt(linha.substring(15, 16));
 			
+			//Recuperar quantas matérias o aluno está inscrito no atual periodo
+			if ((linha.contains("ASC - Matrícula"))) qtdMateriasCursando++;
+			
 		}
 		
-		return new ControleAluno(matricula, nome, cra, periodo);
+		return new ControleAluno(matricula, nome, cra, periodo, qtdMateriasCursando);
 	}
 	
 	public ControleDisciplinaCursada getDisciplina(){
