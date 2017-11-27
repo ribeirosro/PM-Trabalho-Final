@@ -19,7 +19,7 @@ public class ControleSvg {
 		
 		alterarCorSvg();
 		
-		svg.escreverSVG(controleAluno.getAluno().getNome());
+		svg.escreverSVG(controleAluno.getNome());
 	}
 	
 	private void alterarCorSvg() {
@@ -44,14 +44,14 @@ public class ControleSvg {
 			if (!achou) //Se não achou, procurar se é uma disciplina optativa
 			for (int i = 0; i < Disciplina.bsiOptativas.length; i++) {
 				if (codigo.equals(Disciplina.bsiOptativas[i])) {
-					nome = "OPTATIVA_0"+ OPTATIVA++;
+					if (OPTATIVA <= 8) nome = "OPTATIVA_0"+ OPTATIVA++;
 					achou = true;
 					break;
 				}
 			}
 			
 			if (!achou)	//Se não achou, a disciplina só pode ser uma eletiva	
-				nome = "ELETIVA_0"+ ELETIVA++;
+				if (ELETIVA <= 4) nome = "ELETIVA_0"+ ELETIVA++;
 
 
 			if (aux.getSituacao().equals("aprovado")) svg.getDocumentoSvg().getElementById(nome).setAttribute("style", "fill:#00FF00; fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1");

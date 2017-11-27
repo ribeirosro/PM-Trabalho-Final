@@ -1,10 +1,7 @@
 package controle;
 
 import java.util.List;
-
-import modelo.Aluno;
 import modelo.Disciplina;
-import modelo.DisciplinaCursada;
 import modelo.Pdf;
 
 public class ControlePdf {
@@ -14,12 +11,6 @@ public class ControlePdf {
 	public ControlePdf(String path) {
 		pdf = new Pdf(path);
 		listaTextoPdf = pdf.getTextoPdf();
-		getAluno();
-		getDisciplina();
-	}
-
-	public List<String> getListaTextoPdf() {
-		return listaTextoPdf;
 	}
 	
 	public ControleAluno getAluno() {
@@ -66,7 +57,7 @@ public class ControlePdf {
 		for (String linha : listaTextoPdf) {	
 			Disciplina disciplina;
 			
-			//Recuperar o disciplina
+			//Recuperar a disciplina
 			if ((linha.contains("APV- Aprovado")) || (linha.contains("DIS - Dispensa sem nota")) || (linha.contains("DIS - Dispensa com nota"))){
 				disciplina = new Disciplina(linha.substring(0, 7));
 				disciplinaCursada.novaDisciplina(disciplina, "aprovado");
