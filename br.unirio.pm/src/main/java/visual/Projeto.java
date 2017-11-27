@@ -71,7 +71,6 @@ public class Projeto extends JFrame {
 				if (retorno == JFileChooser.APPROVE_OPTION) {
 					new ControleProjeto(fileChooser.getSelectedFile().getPath());
 					
-					//lblUsuario.setText("oi");
 					
 				}
 				
