@@ -42,7 +42,9 @@ public class ControlePdf {
 			if (linha.contains("Coeficiente de Rendimento Geral")) {
 				
 				//Transformar o CR de "X,XX" para "X.XX"(formato aceito para Double)
-				String[] cr = linha.substring(96, 103).split(",");
+				String[] aux = linha.split(":");
+				
+				String[] cr = aux[1].substring(1, 7).split(",");
 				cra = Double.parseDouble(cr[0] + "." + cr[1]);
 			}
 			
