@@ -37,9 +37,9 @@ public class ControleDisciplinaCursada {
 		return false;
 	}
 	
-	private void atualizarDisciplina(DisciplinaCursada aux, String situacao) {
-		aux.setQtdTentativas(aux.getQtdTentativas() + 1);
-		aux.setSituacao(situacao);
+	private void atualizarDisciplina(DisciplinaCursada disciplinaCursada, String situacao) {
+		disciplinaCursada.setQtdTentativas(disciplinaCursada.getQtdTentativas() + 1);
+		disciplinaCursada.setSituacao(situacao);
 	}
 	
 	//Retorna true se, em alguma disciplina, o aluno reprovou 4 vezes ou mais
@@ -50,4 +50,5 @@ public class ControleDisciplinaCursada {
 		
 		return false;
 	}
+	
 }

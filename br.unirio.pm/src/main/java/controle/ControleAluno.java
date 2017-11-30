@@ -29,6 +29,14 @@ public class ControleAluno {
 		return aluno.getNome();
 	}
 	
+	public String getMatricula() {
+		return aluno.getMatricula();
+	}
+	
+	public int getPeriodo() {
+		return aluno.getPeriodo();
+	}
+	
 	public double getCr() {
 		return aluno.getCr();
 	}

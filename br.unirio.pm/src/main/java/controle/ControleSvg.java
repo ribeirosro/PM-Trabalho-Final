@@ -1,5 +1,7 @@
 package controle;
 
+import org.w3c.dom.Document;
+
 import modelo.Disciplina;
 import modelo.DisciplinaCursada;
 import modelo.Svg;
@@ -30,7 +32,7 @@ public class ControleSvg {
 			boolean achou = false;
 			String nome = null;
 			
-			String codigo = aux.getDisciplina().getCodigo();
+			String codigo = aux.getDisciplinaCodigo();
 			
 			//Procurar se é uma disciplina obrigatoria
 			for (int i = 0; i < Disciplina.bsiObrigatorias.length; i++) {
@@ -58,5 +60,9 @@ public class ControleSvg {
 			else svg.getDocumentoSvg().getElementById(nome).setAttribute("style", "fill:#FF0000; fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1");
 				
 		}
+	}
+	
+	public Document getDocumentoSvg() {
+		return svg.getDocumentoSvg();
 	}
 }
