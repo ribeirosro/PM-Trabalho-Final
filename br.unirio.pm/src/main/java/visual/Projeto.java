@@ -43,7 +43,7 @@ public class Projeto extends JFrame {
 	 */
 	public Projeto() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 206, 250);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -54,12 +54,7 @@ public class Projeto extends JFrame {
 		lblSelecioneOArquivo.setBounds(34, 52, 149, 14);
 		contentPane.add(lblSelecioneOArquivo);
 		
-		JLabel lblUsuario = new JLabel("Usuario");
-		lblUsuario.setBounds(232, 27, 46, 14);
-		lblUsuario.setVisible(false);
-		contentPane.add(lblUsuario);
-		
-		JButton btnSelecionarArquivo = new JButton("Selecionar arquivo");
+		JButton btnSelecionarArquivo = new JButton("Selecionar");
 		btnSelecionarArquivo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
@@ -70,7 +65,6 @@ public class Projeto extends JFrame {
 				
 				if (retorno == JFileChooser.APPROVE_OPTION) {
 					new ControleProjeto(fileChooser.getSelectedFile().getPath());
-					
 					
 				}
 				

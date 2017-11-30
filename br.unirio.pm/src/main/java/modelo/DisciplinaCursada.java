@@ -14,6 +14,10 @@ public class DisciplinaCursada {
 	public Disciplina getDisciplina() {
 		return disciplina;
 	}
+	
+	public String getDisciplinaCodigo() {
+		return disciplina.getCodigo();
+	}
 
 	public String getSituacao() {
 		return situacao;
